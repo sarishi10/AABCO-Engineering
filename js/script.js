@@ -123,6 +123,18 @@ var ddTrigger = document.querySelector('[data-dd-trigger]');
 
 if(ddTrigger){
   var wrap = ddTrigger.closest('.nav-item-dropdown');
+  var ddPanel = wrap ? wrap.querySelector('.dropdown-panel') : null;
+
+  /* On mobile the trigger only expands/collapses the submenu (see below),
+     so there was previously no way to actually reach products.html from
+     a phone. Add a persistent "View All" link inside the panel itself. */
+  if(ddPanel && !ddPanel.querySelector('.dd-view-all')){
+    var viewAll = document.createElement('a');
+    viewAll.href = 'products.html';
+    viewAll.className = 'dd-view-all';
+    viewAll.textContent = 'View All Products / Services';
+    ddPanel.appendChild(viewAll);
+  }
 
   ddTrigger.addEventListener('click', function(e){
     var isMobile = window.matchMedia('(max-width:980px)').matches;
