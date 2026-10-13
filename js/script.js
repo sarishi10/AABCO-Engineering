@@ -126,11 +126,11 @@ if(ddTrigger){
   var ddPanel = wrap ? wrap.querySelector('.dropdown-panel') : null;
 
   /* On mobile the trigger only expands/collapses the submenu (see below),
-     so there was previously no way to actually reach products.html from
+     so there was previously no way to actually reach /products/ from
      a phone. Add a persistent "View All" link inside the panel itself. */
   if(ddPanel && !ddPanel.querySelector('.dd-view-all')){
     var viewAll = document.createElement('a');
-    viewAll.href = 'products.html';
+    viewAll.href = '/products/';
     viewAll.className = 'dd-view-all';
     viewAll.textContent = 'View All Products / Services';
     ddPanel.appendChild(viewAll);
@@ -145,7 +145,7 @@ if(ddTrigger){
       var open = wrap.classList.toggle('is-open');
       ddTrigger.setAttribute('aria-expanded', open ? 'true' : 'false');
     }else{
-      window.location.href = 'products.html';
+      window.location.href = '/products/';
     }
   });
 }

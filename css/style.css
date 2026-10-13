@@ -1422,3 +1422,7 @@ h1,h2,h3,h4{ color:var(--text-ink); }
 
 /* ---- Homepage hero: AABCO ENGINEERING (M) SDN.BHD. in dark blue-purple ---- */
 .hero-content h1.display{ color:#3b2f70; }
+
+/* AABCO homepage hero heading: one typography level smaller. */
+.hero-content h1.display{font-size:clamp(2.1rem,4.2vw,3.1rem);}
+@media (min-width:981px){.hero-content h1.display{font-size:clamp(2.1rem,4.2vw,3.1rem);}}
